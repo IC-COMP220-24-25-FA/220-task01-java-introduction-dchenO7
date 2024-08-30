@@ -10,7 +10,8 @@ public class Triangle {
     }
 
     public double calcArea(){
-
+        double triArea = (double).5 * base * height;
+        return triArea;
     }
 
     public void doubleSize(){
