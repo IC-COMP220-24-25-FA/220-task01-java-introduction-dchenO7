@@ -36,14 +36,15 @@ public class RectangleTest {
         assertEquals(1, myRectangle.getWidth());
     }
 
+    @Test
     public void longestLineWithinTest(){
         Rectangle myRectangle = new Rectangle(1, 2);
-        assertEquals(2, myRectangle.longestLineWithin());
+        assertEquals(2.236067, myRectangle.longestLineWithin(),.0001);
 
         myRectangle = new Rectangle(3,4);
-        assertEquals(5, myRectangle.longestLineWithin());
+        assertEquals(5, myRectangle.longestLineWithin(),.0001);
 
         myRectangle = new Rectangle(.5,.5);
-        assertEquals(1, myRectangle.longestLineWithin());
+        assertEquals(.707106, myRectangle.longestLineWithin(),.00001);
     }
 }

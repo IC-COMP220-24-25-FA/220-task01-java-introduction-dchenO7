@@ -20,7 +20,9 @@ public class Rectangle {
     }
 
     public double longestLineWithin(){
-        throw new RuntimeException("Not implemented yet");
+        double hypotenus = (this.length*this.length) + (this.width*this.width);
+        hypotenus = Math.sqrt(hypotenus);
+        return hypotenus;
     }
     
     public double getLength(){
