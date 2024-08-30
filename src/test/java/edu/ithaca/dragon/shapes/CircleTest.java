@@ -1,5 +1,6 @@
 package edu.ithaca.dragon.shapes;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -36,15 +37,17 @@ public class CircleTest {
 
     @Test
     public void doubleSizeTest(){
-        Circle myCircle = new Circle(radius:1);
-        assertEquals(expected:6.1415, myCircle.doubleSize(), delta:0.0001);
+        Circle myCircle = new Circle(1);
+        myCircle.doubleSize();
+        assertEquals(2, myCircle.getRadius());
 
-        myCircle = new Circle(radius:5.5);
-        assertEquals(expected:190.0662, myCircle.doubleSize(), delta:0.0001);
+        myCircle = new Circle(.5);
+        myCircle.doubleSize();
+        assertEquals(11, myCircle.getRadius());
 
-        myCircle = new Circle(radius:.001);
-        assertEquals(expected:0.000006283, myCircle.doubleSize();, delta:0.0000000000001);
-
+        myCircle = new Circle(.001);
+        myCircle.doubleSize();
+        assertEquals(.002, myCircle.getRadius());
     }
 
 

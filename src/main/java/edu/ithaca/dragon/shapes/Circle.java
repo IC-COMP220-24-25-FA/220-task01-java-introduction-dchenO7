@@ -31,4 +31,11 @@ public class Circle {
     public double longestLineWithin(){
         throw new RuntimeException("Not implemented yet");
     }
+
+    /**
+     * @return radius of this circle
+     */
+    public double getRadius(){
+        return this.radius;
+    }
 }
