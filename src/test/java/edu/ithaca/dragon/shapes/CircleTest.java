@@ -3,6 +3,7 @@ package edu.ithaca.dragon.shapes;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -41,7 +42,7 @@ public class CircleTest {
         myCircle.doubleSize();
         assertEquals(2, myCircle.getRadius());
 
-        myCircle = new Circle(.5);
+        myCircle = new Circle(5.5);
         myCircle.doubleSize();
         assertEquals(11, myCircle.getRadius());
 
@@ -50,6 +51,15 @@ public class CircleTest {
         assertEquals(.002, myCircle.getRadius());
     }
 
+    @Test
+    public void longestLineWithinTest(){
+        Circle myCircle = new Circle(1);
+        assertEquals(2, myCircle.longestLineWithin());
 
-    
+        myCircle = new Circle(5.5);
+        assertEquals(11, myCircle.longestLineWithin());
+
+        myCircle = new Circle(.001);
+        assertEquals(.002, myCircle.longestLineWithin());;
+    }
 }
