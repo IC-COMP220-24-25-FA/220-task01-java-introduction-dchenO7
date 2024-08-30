@@ -15,10 +15,19 @@ public class Triangle {
     }
 
     public void doubleSize(){
-
+        base = (double) base * 2;
+        height = (double) height * 2;
     }
 
     public double longestLineWithin(){
 
+    }
+
+    public double getBase(){
+        return base;
+    }
+
+    public double getHeight(){
+        return height;
     }
 }
