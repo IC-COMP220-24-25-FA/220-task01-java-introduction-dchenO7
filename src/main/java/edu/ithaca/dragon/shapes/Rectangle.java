@@ -5,11 +5,13 @@ public class Rectangle {
     private double width;
 
     public Rectangle(double length, double width){
-        throw new RuntimeException("Not implemented yet");
+        this.length = length;
+        this.width = width;
     }
 
     public double calcArea(){
-       throw new RuntimeException("Not implemented yet");
+        double rectArea = this.length * this.width;
+        return rectArea;
     }
 
     public void doubleSize(){
