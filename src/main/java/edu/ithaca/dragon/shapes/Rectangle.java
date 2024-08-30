@@ -22,4 +22,11 @@ public class Rectangle {
         throw new RuntimeException("Not implemented yet");
     }
     
+    public double getLength(){
+        return this.length;
+    }
+
+    public double getWidth(){
+        return this.width;
+    }
 }
