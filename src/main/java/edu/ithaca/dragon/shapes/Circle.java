@@ -29,8 +29,9 @@ public class Circle {
      * @return the longest straight line that can be drawn within this circle
      */
     public double longestLineWithin(){
-        throw new RuntimeException("Not implemented yet");
-    }
+        double diameter = (double)radius * 2;
+        return diameter;
+        }
 
     /**
      * @return radius of this circle
