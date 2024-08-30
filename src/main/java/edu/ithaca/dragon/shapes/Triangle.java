@@ -20,7 +20,9 @@ public class Triangle {
     }
 
     public double longestLineWithin(){
-
+        double hypotenus = (double)(base*base) + (height*height);
+        hypotenus = Math.sqrt(hypotenus);
+        return hypotenus;
     }
 
     public double getBase(){
