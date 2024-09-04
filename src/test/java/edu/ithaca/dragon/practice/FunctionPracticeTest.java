@@ -35,4 +35,18 @@ public class FunctionPracticeTest {
         assertThrows(IllegalArgumentException.class, () -> FunctionPractice.calcSalePrice(-30, -5, -2));
     }
     
+    @Test
+    public void isGoodDogTest(){
+        //return true if daysSinceShoesChewed > 7 and fetchedThePaper is true
+        assertTrue(FunctionPractice.isGoodDog(2, 9, true));
+        assertTrue(FunctionPractice.isGoodDog(8, 22, true));
+        assertFalse(FunctionPractice.isGoodDog(1, 3, true));
+        assertFalse(FunctionPractice.isGoodDog(3, 10, false));
+        assertFalse(FunctionPractice.isGoodDog(5, 3, false));
+
+        //return error if negative num input
+        assertThrows(IllegalArgumentException.class, () -> FunctionPractice.isGoodDog(-3, 5, true));
+        assertThrows(IllegalArgumentException.class, () -> FunctionPractice.isGoodDog(9, -5, false));
+        assertThrows(IllegalArgumentException.class, () -> FunctionPractice.isGoodDog(-7, -6, true));
+    }
 }
