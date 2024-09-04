@@ -29,10 +29,12 @@ public class FunctionPractice {
         if (originalPrice<0||discountPercent<0||salesTax<0) {
             throw new IllegalArgumentException("Can't be a negative number");
         }
+        double salePrice;
+        double discount = 0;
         if (discountPercent!=0) {
-            
+            discount = (double)(discountPercent/100) * originalPrice;
         }
-
+        salePrice = originalPrice - discount + salesTax;
         return salePrice;
     }
 
