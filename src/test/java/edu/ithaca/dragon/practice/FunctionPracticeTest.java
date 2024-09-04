@@ -84,6 +84,6 @@ public class FunctionPracticeTest {
         //2 biggest numbers
         numbers.add(10);
         numbers.add(1);
-        assertEquals(3, FunctionPractice.findLastLargest(numbers));
+        assertEquals(5, FunctionPractice.findLastLargest(numbers));
     }
 }

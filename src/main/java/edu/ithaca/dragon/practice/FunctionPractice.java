@@ -74,8 +74,17 @@ public class FunctionPractice {
      * If the largest number occurs more than once, return the index of the last occurence.
      */
     public static int findLastLargest(List<Integer> numbers){
-        throw new RuntimeException("Not Implemented");
-    }
+        int largestIndex;
+        if (numbers.size() == 0) {
+            return -1;
+        }
+        largestIndex = 0;
+        for (int i = numbers.size()-1; i > 0; i--) {
+            if (numbers.get(largestIndex) < numbers.get(i)) {
+                largestIndex = i;
+            }
+        }
+        return largestIndex;    }
 
     /**
      * @return the string that has contains the most occurences of the given letter
