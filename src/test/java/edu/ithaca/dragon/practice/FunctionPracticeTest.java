@@ -91,7 +91,7 @@ public class FunctionPracticeTest {
     public void findFirstMostOccurencesOfLetterTest(){
         //return -1 no string in list
         List<String> strings = new ArrayList<>();
-        assertEquals(-1, FunctionPractice.findFirstMostOccurencesOfLetter(strings, 'a'));
+        assertEquals("-1", FunctionPractice.findFirstMostOccurencesOfLetter(strings, 'a'));
         strings.add("null");
         strings.add("adapt");
         strings.add("vampire");

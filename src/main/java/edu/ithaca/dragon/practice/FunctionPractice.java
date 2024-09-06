@@ -91,7 +91,31 @@ public class FunctionPractice {
      * @throws 
      */
     public static String findFirstMostOccurencesOfLetter(List<String> words, char letter){
-        throw new RuntimeException("Not Implemented");
+        if (words.size() == 0) {
+            return "-1";
+        }
+        int wordIndex = -1;
+        int mostLetter = 0;
+        //go through words of string list
+        for (int i = 0; i < words.size()-1; i++) {
+            String currentWord = words.get(i);
+            //go through letters of words
+            for (int j = 0; j < words.get(i).length()-1; j++) {
+                int letterCount = 0;
+                if (currentWord.charAt(j) == letter) {
+                    letterCount += 1;
+                }
+                if (letterCount > mostLetter) {
+                    mostLetter = letterCount;
+                    wordIndex = i;
+                }
+            }
+        }
+        if (mostLetter == 0) {
+            throw new IllegalArgumentException("There is no " + letter + " in these words");
+        }
+
+        return words.get(wordIndex);
     }
 
 
