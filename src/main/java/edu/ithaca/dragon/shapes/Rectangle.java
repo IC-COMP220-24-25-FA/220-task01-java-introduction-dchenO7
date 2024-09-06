@@ -32,4 +32,8 @@ public class Rectangle {
     public double getWidth(){
         return this.width;
     }
+
+    public String toString(){
+        return "Rectangle length: " + length + "\nRectangle width: " + width;
+    }
 }
