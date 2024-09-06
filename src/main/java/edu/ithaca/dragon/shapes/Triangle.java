@@ -32,4 +32,8 @@ public class Triangle {
     public double getHeight(){
         return height;
     }
+
+    public String toString(){
+        return "Triangle base: " + base +"\nTriangle height: " + height;
+    }
 }

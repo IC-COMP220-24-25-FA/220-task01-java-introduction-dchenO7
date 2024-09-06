@@ -9,21 +9,46 @@ public class FunctionPractice {
      * @throws IllegalArgumentException if any of the numbers is negative
      */
     public static int largestOfThree(int first, int second, int third){
-        throw new RuntimeException("Not Implemented");
+        if (first<0||second<0||third<0) {
+            throw new IllegalArgumentException("Can't be a negative number");
+        }
+        int largest = first;
+        if (largest < second) {
+            largest = second;
+        }
+        if (largest < third) {
+            largest = third;
+        }
+        return largest;
     }
     
     /**
      * @return the final price at register of the given item after discount and tax applied
      */
     public static double calcSalePrice(double originalPrice, double discountPercent, double salesTax){
-        throw new RuntimeException("Not Implemented");
+        if (originalPrice<0||discountPercent<0||salesTax<0) {
+            throw new IllegalArgumentException("Can't be a negative number");
+        }
+        double salePrice;
+        double discount = 0;
+        if (discountPercent!=0) {
+            discount = (double)(discountPercent/100) * originalPrice;
+        }
+        salePrice = originalPrice - discount + salesTax;
+        return salePrice;
     }
 
     /**
      * @return true if the data collected shows the dog is good, false if bad dog today
      */
     public static boolean isGoodDog(int yearsOld, int daysSinceShoesChewed, boolean fetchedThePaperToday){
-        throw new RuntimeException("Not Implemented");
+        if (yearsOld<0||daysSinceShoesChewed<0) {
+            throw new IllegalArgumentException("Can't be a negative number");
+        }
+        if (daysSinceShoesChewed>7&&fetchedThePaperToday==true) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -31,7 +56,17 @@ public class FunctionPractice {
      * If the largest number occurs more than once, return the index of the first occurence.
      */
     public static int findFirstLargest(List<Integer> numbers){
-        throw new RuntimeException("Not Implemented");
+        int largestIndex;
+        if (numbers.size() == 0) {
+            return -1;
+        }
+        largestIndex = 0;
+        for (int i = 1; i < numbers.size(); i++) {
+            if (numbers.get(largestIndex) < numbers.get(i)) {
+                largestIndex = i;
+            }
+        }
+        return largestIndex;
     }
 
     /**
@@ -39,15 +74,48 @@ public class FunctionPractice {
      * If the largest number occurs more than once, return the index of the last occurence.
      */
     public static int findLastLargest(List<Integer> numbers){
-        throw new RuntimeException("Not Implemented");
-    }
+        int largestIndex;
+        if (numbers.size() == 0) {
+            return -1;
+        }
+        largestIndex = 0;
+        for (int i = numbers.size()-1; i > 0; i--) {
+            if (numbers.get(largestIndex) < numbers.get(i)) {
+                largestIndex = i;
+            }
+        }
+        return largestIndex;    }
 
     /**
      * @return the string that has contains the most occurences of the given letter
      * @throws 
      */
     public static String findFirstMostOccurencesOfLetter(List<String> words, char letter){
-        throw new RuntimeException("Not Implemented");
+        if (words.size() == 0) {
+            return "-1";
+        }
+        int wordIndex = -1;
+        int mostLetter = 0;
+        //go through words of string list
+        for (int i = 0; i < words.size()-1; i++) {
+            String currentWord = words.get(i);
+            //go through letters of words
+            for (int j = 0; j < words.get(i).length()-1; j++) {
+                int letterCount = 0;
+                if (currentWord.charAt(j) == letter) {
+                    letterCount += 1;
+                }
+                if (letterCount > mostLetter) {
+                    mostLetter = letterCount;
+                    wordIndex = i;
+                }
+            }
+        }
+        if (mostLetter == 0) {
+            throw new IllegalArgumentException("There is no " + letter + " in these words");
+        }
+
+        return words.get(wordIndex);
     }
 
 
